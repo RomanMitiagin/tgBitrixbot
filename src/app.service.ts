@@ -210,7 +210,7 @@ export class AppService {
 
       const transcriptResponse = await axios.post('https://api.assemblyai.com/v2/transcript', {
         audio_url: uploadResponse.data.upload_url,
-        language_code: 'ru', // Указываем русский язык
+        language_code: 'ru', 
       }, {
         headers: {
           'authorization': config.assemblyAIKey,
@@ -235,7 +235,7 @@ export class AppService {
         } else if (transcriptStatus === 'failed') {
           throw new Error('Transcription failed');
         } else {
-          await new Promise(resolve => setTimeout(resolve, 5000)); // Ждем 5 секунд перед повторной проверкой
+          await new Promise(resolve => setTimeout(resolve, 5000)); 
         }
       }
 
